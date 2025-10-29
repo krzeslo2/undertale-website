@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Tangerine:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  background-color: rgba(0, 0, 0, 1);
+  background-image: url("images/Deltarune.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(3px); 
+  -webkit-backdrop-filter: blur(3px); 
+  z-index: 10;
+}
+
+
+.navbar * {
+  position: relative;
+  z-index: 11;
+  color: black;
+  font-family: "Outfit", swap;
+}
+.navbar-nav .nav-item {
+  margin: 0 30px;
+}
+.navbar-nav .nav-item .nav-link{
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+
+.navbar-nav .nav-item .nav-link.active{
+  color: #9742e7;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.315);
+  border-radius: 10px;
+}
+
+  .introduction>.p1{
+    font-family: 'Poppins';
+    color: white;
+    margin-top: 75px;
+    text-align: center;
+    font-size: 80px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+  }
+  .darker_introduction>.p2{
+    font-family: 'Poppins';
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    opacity: 0;
+    animation: fadeIn 0.9s ease-in forwards;
+  }
+  .darker_introduction{
+    background-color: rgba(0, 0, 0, 0.397);
+    padding-top: 25px;
+    min-height: 80px;
+    opacity: 0;
+    animation: fadeIn 0.9s ease-in forwards;
+    padding-bottom: 15px;
+  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+

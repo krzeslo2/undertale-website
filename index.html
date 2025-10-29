@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>General - Undertale-ish thingy.com</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+</head>
+<script>
+  function play(ClickedImg, id) {
+    let container = ClickedImg.parentElement;
+    let explosion = container.querySelector('.eksplozje');
+    let audio = container.querySelector('audio');
+    let element = document.getElementById(id);
+
+    if (audio) {
+      audio.currentTime = 0;
+      audio.play();
+    }
+
+    if (explosion) {
+      explosion.style.display = 'block';
+
+      setTimeout(() => {
+        explosion.remove();
+        element.remove();
+      }, 2000);
+    }
+  }
+</script>
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <a class="navbar-brand" href="index.html" style="color: white;">Japa Mateusz</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mb-2 mx-auto text-center">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="About.html">About Creator</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="japa_wiktor">
+    <div id="Karuzela" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="video-wrapper">
+            <a href="deltarune.html">
+              <video class="d-block w-100 filmiki" autoplay loop muted playsinline>
+                <source src="Videos/klip3.mp4" type="video/mp4">
+              </video>
+              <div class="overlay-text">Explore the world of Deltarune!</div>
+            </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="video-wrapper">
+            <video class="d-block w-100 filmiki" autoplay loop muted playsinline>
+              <source src="Videos/klip4.mp4" type="video/mp4">
+            </video>
+            <div class="overlay-text">Listen to masterclass OST's!</div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="video-wrapper">
+            <video class="d-block w-100 filmiki" autoplay loop muted playsinline>
+              <source src="Videos/klip5.mp4" type="video/mp4">
+            </video>
+            <div class="overlay-text">Disover the lore of UNDERTALE!</div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#Karuzela" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#Karuzela" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+  </div>
+  <div class="japa_wiktor">
+    <b>
+      <h3>What is <img src="images/logo.png">?</h3>
+    </b>
+    <p>Undertale is a 2015 role-playing video game created by American indie developer Toby Fox. The player controls
+      a child who has fallen into the Underground: a large, secluded region under the surface of the Earth, separated by
+      a magical barrier.
+      The player meets various monsters during the journey back to the surface, some of which may engage in combat. The
+      combat system involves
+      the player navigating through mini-bullet hell attacks by the opponent. They can opt to appease monsters in order
+      to spare them
+      instead of killing them. These choices affect the game, with the dialogue, characters, and story changing based on
+      outcomes.</p>
+  </div>
+
+  <div class="japa_wiktor">
+    <h3><b>What is This type of games even about?</b></h3>
+    <p>Undertale and Deltarune are a role-playing video games that use a top-down perspective.
+      In the game, the player controls a child and completes objectives in order to progress through the story.
+      Players explore a world, and are required to solve numerous puzzles on their journey.
+      The world is the home of monsters, many of whom challenge the player in combat;
+      players decide whether to kill, flee from, or befriend them.
+      Choices made by the player radically affect the plot and general progression of the game, with the player's
+      morality acting as the cornerstone for the game's development.</p>
+  </div>
+
+  <div class="japa_wiktor">
+    <h3><b>Something About Development...</b></h3>
+    <p>Undertale was developed by Toby Fox across 32 months.
+      Development was financed through a crowdfunding campaign on the website Kickstarter
+      The campaign was launched on June 25, 2013, with a goal of US$5,000; it ended on July 25, 2013, with US$51,124
+      raised by 2,398 people.
+      Fox had little experience with game development;
+      he and his three brothers often used RPG Maker 2000 to make role-playing games, though few were ever completed.
+      Fox also worked on several EarthBound ROM hacks while in high school.
+      Before the release of Undertale, he was best known for composing music for the webcomic Homestuck, starting in
+      2010.
+      Undertale was the first full game that he wrote.</p>
+
+
+    <section>
+      <div class="cards">
+        <div class="card">
+          <div class="content">
+            <h1>2,398</h1>
+            <h3>Amount of people</h3>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="content">
+            <h1>$51,124</h1>
+            <h3>Amount of money pledged for the cause</h3>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="content">
+            <h1>01.02.2017</h1>
+            <h3>Last time updated</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <p>According to Fox, he was casually reading Wikipedia in December 2012 when he found its article for array data
+      structures,
+      something Fox did not have knowledge of.
+      After reading the page, he thought about how he could use it to create a text system for an RPG.
+      After completing it, he came up with the idea of creating a battle system.
+      This system, which was created using the game creation system
+      GameMaker: Studio, informed how Fox wrote the story, as both are intertwined.
+      He wanted to develop a role-playing game that was different from the traditional design, which he often found
+      "boring to play".
+      He set out to develop a game with "interesting characters", and that "utilizes the medium as a storytelling device
+      ...
+      instead of having the story and gameplay abstractions be completely separate".</p>
+
+
+      
+    <div class="menu">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-3 col-sm-6 d-block position-relative element">
+            <img src="images/fight.png" alt="" class="fight img-fluid" id="fight" onclick="play(this,'fight')">
+            <img src="images/explosion-deltarune.gif" id="wybuch" class="eksplozje" style="display: none;">
+            <audio src="Audios/deltarune-explosion.mp3" class="audio"></audio>
+          </div>
+          <div class="col-md-3 col-sm-6 d-block position-relative element">
+            <img src="images/act.png" alt="" class="act img-fluid" id="act" onclick="play(this,'act')">
+            <img src="images/explosion-deltarune.gif" id="wybuch2" class="eksplozje" style="display: none;">
+            <audio src="Audios/deltarune-explosion (1).mp3" class="audio"></audio>
+          </div>
+          <div class="col-md-3 col-sm-6 d-block position-relative element">
+            <img src="images/item.png" alt="" class="item img-fluid" id="item" onclick="play(this,'item')">
+            <img src="images/explosion-deltarune.gif" id="wybuch3" class="eksplozje" style="display: none;">
+            <audio src="Audios/deltarune-explosion (2).mp3" class="audio"></audio>
+          </div>
+          <div class="col-md-3 col-sm-6 d-block position-relative element">
+            <img src="images/mercy.png" alt="" class="mercy img-fluid" id="mercy" onclick="play(this,'mercy')">
+            <img src="images/explosion-deltarune.gif" id="wybuch4" class="eksplozje" style="display: none;">
+            <audio src="Audios/deltarune-explosion (3).mp3" class="audio"></audio>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="japa_wiktor">
+    <iframe src="https://store.steampowered.com/widget/1671210/" frameborder="0" width="75%" height="190" class="link_pobranie"></iframe>
+    <iframe src="https://store.steampowered.com/widget/391540/" frameborder="0" width="75%" height="190" class="link_pobranie"></iframe>
+  </div>
+  <section id="video">
+    <video autoplay loop muted plays-inline>
+      <source src="images/Deltarune.gif" type="gif" />
+    </video>
+  </section>
+</body>
+
+</html>
