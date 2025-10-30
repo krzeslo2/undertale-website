@@ -277,18 +277,6 @@ body {
   pointer-events: none;
 }
 
-
-/*Credit dla Nikodema I, jego pomysl i jego kod z drobnymi modyfikacjami*/
-@keyframes wiadomosci {
-  from {
-    left: 100%;
-  }
-
-  to {
-    left: -100%;
-  }
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
@@ -366,8 +354,7 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 0;
-    object-fit: cover;
-    /*dopasowanie obrazka*/
+    object-fit: cover; /*dopasowanie obrazka*/
     display: block;
   }
 
