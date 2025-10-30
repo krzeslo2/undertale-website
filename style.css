@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Tangerine:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
 @font-face {
   font-family: 'DeterminationMono';
   src: url('fonts/determination-mono-webfont.woff2') format('woff2'),
@@ -13,6 +14,7 @@
   font-family: '8bit';
   src: url('fonts/8bitOperatorPlus8-Regular.ttf');
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -37,6 +39,7 @@ body {
   z-index: 0;
   background-attachment: fixed;
 }
+
 .japa_wiktor {
   margin-top: 2%;
   margin-bottom: 5%;
@@ -286,20 +289,12 @@ body {
   }
 }
 
-.wiadomosci>.ralsi {
-  position: fixed;
-  bottom: 0;
-  height: 100px;
-  width: 100px;
-  animation: wiadomosci 15s infinite linear;
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
 
 .link_pobranie {
-  margin: 25px;
+  margin-left: 50px;
 }
 
 .intro-img {
@@ -326,6 +321,7 @@ body {
   color: #f0b641;
   font-family: "Outfit", swap;
 }
+
 .intro>.imie {
   font-size: 50px !important;
   position: absolute;
@@ -335,33 +331,51 @@ body {
   color: #f0b641;
   font-family: "Outfit", swap;
 }
+
 .intro {
   position: relative;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1583px) {
+  body {
+    background-color: #f0b641 !important;
+  }
+
+  .blank {
+    display: none;
+  }
+
+  .Beginning>.bgn_p {
+    font-family: "Outfit", swap;
+    font-size: 20px;
+    margin-left: 5px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
   .intro {
-    position: relative;     
+    position: relative;
     margin: 0;
     padding: 0;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;       
+    overflow: hidden;
   }
 
   .intro-img {
     width: 100%;
     height: 100%;
     border-radius: 0;
-    object-fit: cover;  /*dopasowanie obrazka*/     
+    object-fit: cover;
+    /*dopasowanie obrazka*/
     display: block;
   }
 
-  .intro > .welcome {
-    position: absolute;     
-    top: 50%;               
-    left: 50%;              
-    transform: translate(-50%, -50%); 
+  .intro>.welcome {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 70px;
     color: #fdf6e3;
     text-align: center;
@@ -369,17 +383,129 @@ body {
     padding: 0;
     font-family: "Outfit", swap;
   }
+
   .intro>.imie {
-  font-size: 50px !important;
-  position: absolute;
-  top: 75%;
-  left: 30%;
-  font-size: 75px;
-  color: white;
-  font-family: "Outfit", swap;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 75px;
+    color: white;
+    font-family: "Outfit", swap;
+    text-align: center;
+  }
 }
 
-  .wiadomosci > .ralsi {
+@media(max-width:862px) {
+  .intro>.imie {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 75px;
+    color: white;
+    font-family: "Outfit", swap;
+    text-align: center;
+  }
+}
+
+@media(max-width:641px) {
+  .intro>.imie {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 75px;
+    color: white;
+    font-family: "Outfit", swap;
+    text-align: center;
+  }
+}
+
+.sale {
+  font-size: xx-large;
+  text-align: center;
+}
+
+.steam-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.blank {
+  width: 100%;
+  height: 300px;
+}
+
+.Beginning>.bgn_p {
+  font-family: "Outfit", swap;
+  font-size: 30px;
+  margin-left: 5px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+@media(max-height: 830px) {
+  .intro>.imie {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 75px;
+    color: white;
+    font-family: "Outfit", swap;
+    text-align: center;
+  }
+}
+
+@media(max-height: 430px) {
+  .intro>.imie {
     display: none;
   }
+}
+
+.characters {
+  width: 40%;
+  height: 100px;
+  border: solid black;
+  border-radius: 20px;
+  margin: 1mm auto;        
+  display: flex;           
+  align-items: center;     
+  justify-content: flex-start; 
+  padding-left: 10px;     
+}
+.susie{
+  background-color: #c022c0;
+}
+.kris{
+  background-color: aqua;
+}
+.ralsei{
+  background-color: rgb(27, 228, 27);
+}
+.susie>p{
+  margin: 0;
+  margin-left: 15px;
+  font-family: "Outfit", swap;
+  color: #490349;
+  font-size: larger;
+}
+.kris>p{
+  margin: 0;
+  margin-left: 15px;
+  font-family: "Outfit", swap;
+  color: #033e49;
+  font-size: larger;
+}
+.ralsei>p{
+  margin: 0;
+  margin-left: 15px;
+  font-family: "Outfit", swap;
+  color: #03490f;
+  font-size: larger;
 }
