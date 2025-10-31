@@ -277,7 +277,7 @@ body {
   pointer-events: none;
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
 }
 

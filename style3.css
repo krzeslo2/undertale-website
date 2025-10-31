@@ -31,6 +31,9 @@ body {
   background-attachment: fixed;
   scroll-behavior: smooth;
 }
+body::-webkit-scrollbar {
+  display: none; 
+}
 .japa_wiktor {
   margin-top: 2%;
   margin-bottom: 5%;
