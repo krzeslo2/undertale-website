@@ -102,6 +102,8 @@ body::-webkit-scrollbar {
     margin: 10px;
     text-align: justify;
     font-family: "8bit";
-
+}
+.content{
+      animation: fadeIn 0.9s ease-in forwards;
 }
 
