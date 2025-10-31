@@ -14,7 +14,8 @@
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
 </head>
-<script>
+<body>
+  <script>
   function play(ClickedImg, id) {
     let container = ClickedImg.parentElement;
     let explosion = container.querySelector('.eksplozje');
@@ -36,8 +37,6 @@
     }
   }
 </script>
-
-<body>
   <nav class="navbar navbar-expand-lg sticky-top">
     <a class="navbar-brand" href="index.html" style="color: white;">Japa Mateusz</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -102,9 +101,8 @@
   </div>
   <p style="text-align: center; font-size: 30px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: red; font-weight: 700;">YOU CAN CLICK ON THE CAROUSEL ITEMS TO ENTER OTHER SITES TOO!</p>
   <div class="japa_wiktor">
-    <b>
-      <h3>What is <img src="images/logo.png">?</h3>
-    </b>
+    
+      <h3><b>What is <img src="images/logo.png" alt="#">?</b></h3>
     <p>Undertale is a 2015 role-playing video game created by American indie developer Toby Fox. The player controls
       a child who has fallen into the Underground: a large, secluded region under the surface of the Earth, separated by
       a magical barrier.
@@ -185,23 +183,23 @@
         <div class="row text-center">
           <div class="col-md-3 col-sm-6 d-block position-relative element">
             <img src="images/for-buttons/fight.png" alt="" class="fight img-fluid" id="fight" onclick="play(this,'fight')">
-            <img src="images/explosion-deltarune.gif" id="wybuch" class="eksplozje" style="display: none;">
+            <img src="images/explosion-deltarune.gif" id="wybuch" class="eksplozje" style="display: none;" alt="#">
             <audio src="Audios/deltarune-explosion.mp3" class="audio"></audio>
           </div>
           <div class="col-md-3 col-sm-6 d-block position-relative element">
             <img src="images/for-buttons/act.png" alt="" class="act img-fluid" id="act" onclick="play(this,'act')">
-            <img src="images/explosion-deltarune.gif" id="wybuch2" class="eksplozje" style="display: none;">
-            <audio src="Audios/deltarune-explosion (1).mp3" class="audio"></audio>
+            <img src="images/explosion-deltarune.gif" id="wybuch2" class="eksplozje" style="display: none;" alt="#">
+            <audio src="Audios/deltarune-explosion(1).mp3" class="audio"></audio>
           </div>
           <div class="col-md-3 col-sm-6 d-block position-relative element">
             <img src="images/for-buttons/item.png" alt="" class="item img-fluid" id="item" onclick="play(this,'item')">
-            <img src="images/explosion-deltarune.gif" id="wybuch3" class="eksplozje" style="display: none;">
-            <audio src="Audios/deltarune-explosion (2).mp3" class="audio"></audio>
+            <img src="images/explosion-deltarune.gif" id="wybuch3" class="eksplozje" style="display: none;" alt="#">
+            <audio src="Audios/deltarune-explosion(2).mp3" class="audio"></audio>
           </div>
           <div class="col-md-3 col-sm-6 d-block position-relative element">
             <img src="images/for-buttons/mercy.png" alt="" class="mercy img-fluid" id="mercy" onclick="play(this,'mercy')">
-            <img src="images/explosion-deltarune.gif" id="wybuch4" class="eksplozje" style="display: none;">
-            <audio src="Audios/deltarune-explosion (3).mp3" class="audio"></audio>
+            <img src="images/explosion-deltarune.gif" id="wybuch4" class="eksplozje" style="display: none;" alt="#">
+            <audio src="Audios/deltarune-explosion(3).mp3" class="audio"></audio>
           </div>
         </div>
       </div>
@@ -216,11 +214,17 @@
     </div>
     <p class="sale">BUY RIGHT NOW!!1!1</p>
   </div>
-  <section id="video">
-    <video autoplay loop muted plays-inline>
-      <source src="images/Deltarune.gif" type="gif" />
-    </video>
-  </section>
-</body>
 
+  <footer class="japa_wiktor">
+    <p style="text-align: center;"> its my own work, no templates were used during it, only bootstrap implements and text/script adjustments<br>
+    To jest moja wlasna praca, nie zostaly uzyte szablony, uzywalem tylko implementacji bootstrapa i modyfikacji skryptu</p>
+    <br>
+    <p style="text-align: left;"><a href="https://www.youtube.com/@codingwithmb/shorts">CSS cards youtube channel</a></p>
+    <p style="text-align: left;">Images are take from Tenor, Clips are my own</p>
+    <p style="text-align: left;">Iframes with Deltarune and Undertale store are from steam</p>
+    <p style="text-align: left;">The game is itself by Toby Fox</p>
+    <p style="text-align: left;">My javascript codes were made with the help of js blogs and websites</p><br>
+    <p style="text-align: center;"><b>Informations are from Wikipedia</b></p>
+  </footer>
+</body>
 </html>

@@ -89,23 +89,19 @@ body::-webkit-scrollbar {
     opacity: 1;
   }
 }
-.lore>.transparent{
-    background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  z-index: 10;
-  width: 750px;
-  margin-left: 28%;
-  border-radius: 10px;
-  animation: fadeIn 0.9s ease-in forwards;
-}
-.transparent>.main{
+
+.content>.main{
     font-family: "8bit";
     font: 600;
     color: white;
     font-size: 40px;
     text-align: center;
 }
-.transparent>p{
+.content>p{
     color: white;
+    margin: 10px;
+    text-align: justify;
+    font-family: "8bit";
+
 }
+
