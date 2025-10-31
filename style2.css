@@ -202,7 +202,7 @@ body {
 
 
 .card1-content {
-  background-image: url('images/Field.png');
+  background-image: url('images/cards-deltarune/Field.png');
   background-size: cover;
   background-position: center;
   padding: 30px;
@@ -217,7 +217,7 @@ body {
 }
 
 .card2-content {
-  background-image: url('images/city.jpg');
+  background-image: url('images/cards-deltarune/city.jpg');
   background-size: cover;
   background-position: center;
   padding: 30px;
@@ -232,7 +232,7 @@ body {
 }
 
 .card3-content {
-  background-image: url('images/concert.jpg');
+  background-image: url('images/cards-deltarune/concert.jpg');
   background-size: cover;
   background-position: center;
   padding: 30px;
@@ -247,7 +247,7 @@ body {
 }
 
 .card4-content {
-  background-image: url('images/titan.jpg');
+  background-image: url('images/cards-deltarune/titan.jpg');
   background-size: cover;
   background-position: center;
   padding: 30px;

@@ -2,128 +2,216 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ost's - Undertale-ish thingy.com</title>
-  <link rel="stylesheet" href="style3.css"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ost's - Undertale-ish thingy.com</title>
+    <link rel="stylesheet" href="style3.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
 </head>
+
 <body style="background-image: none;">
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <a class="navbar-brand" href="index.html" style="color: black;">Japa Mateusz</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <a class="navbar-brand" href="index.html" style="color: black;">Japa Mateusz</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mb-2 mx-auto text-center">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.html" style="color: black;">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="About.html" style="color: black;">About Creator</a>
-        </li>
-      </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mb-2 mx-auto text-center">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.html" style="color: black;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="About.html" style="color: black;">About Creator</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <script>
+        let osts = [];
+        let currentIndex = 0;
+        document.addEventListener("DOMContentLoaded", () => {
+            playBtn = document.getElementById('play');
+            pauseBtn = document.getElementById('pause');
+            soundtracks = document.getElementsByClassName('playlist_add');
+        });
+
+        function whichSoundtrack(id) {
+            const buttons = document.getElementsByClassName('playlist_add');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].innerText = buttons[i].innerText.replace(/^>>> /, ''); //nienawidze funkcji replace() to zajelo dluzej niz mialo zajac
+
+                if (buttons[i].getAttribute('onclick').includes(id)) {
+                    buttons[i].innerText = '>>> ' + buttons[i].innerText;
+                }
+            }
+        }
+
+        function add(id) {
+            var song = document.getElementById(id);
+            if (song) {
+                osts.push(song);
+                alert("Added soundtrack!");
+            } else {
+                alert("No soundtrack found!");
+            }
+        }
+
+        function play() {
+            if (osts.length === 0) {
+                alert("No songs in playlist!");
+                return;
+            }
+
+            var audio = osts[currentIndex];
+            audio.play();
+
+            playBtn.style.display = "none";
+            pauseBtn.style.display = "inline-block";
+            whichSoundtrack(osts[currentIndex].id);
+
+        }
+
+        function previous() {
+            if (currentIndex <= 0) {
+                alert("Cannot go back — this is the first song!");
+                return;
+            }
+            osts[currentIndex].pause();
+            currentIndex--;
+
+            var audio = osts[currentIndex];
+            audio.currentTime = 0;
+            audio.play();
+            playBtn.style.display = "none";
+            pauseBtn.style.display = "inline-block";
+            whichSoundtrack(osts[currentIndex].id);
+
+        }
+
+        function next() {
+            if (currentIndex >= osts.length - 1) {
+                alert("Cannot go forward — this is the last song!");
+                return;
+            }
+
+            osts[currentIndex].pause();
+            currentIndex++;
+
+            var audio = osts[currentIndex];
+            audio.currentTime = 0;
+            audio.play();
+            playBtn.style.display = "none";
+            pauseBtn.style.display = "inline-block";
+            whichSoundtrack(osts[currentIndex].id);
+        }
+
+        function stop() {
+            if (osts.length === 0) return;
+
+            const audio = osts[currentIndex];
+            audio.pause();
+
+            pauseBtn.style.display = "none";
+            playBtn.style.display = "inline-block";
+        }
+
+    </script>
+
+<p class="tutorial">HOW TO USE THE PLAYLIST</p>
+<div class="instruction">
+    <p>1. click on the name of the audio track you want to listen to</p>
+    <p>2. the playlist is an array, when you're adding more tracks, you're adding more values to the array</p>
+    <p>3. You can stop the track using the 'pause' button</p>
+    <p>4. you can skip the track using the 'next' button or turn back using the 'previous' button</p>
+    <h1>HAVE FUN!</h1>
+    <br>
+    <br>
+</div>
+    <div class="playlist-btns">
+        <button id="previous" class="ost-btns" onclick="previous()"><img src="images/for-playlist/previous.png"
+                alt=""></button>
+        <button id="play" class="ost-btns" onclick="play()"><img src="images/for-playlist/play-button-arrowhead.png"
+                alt="" id="img-play"></button>
+        <button id="pause" class="ost-btns" onclick="stop()"><img src="images/for-playlist/pause.png" alt=""
+                id="img-pause"></button>
+        <button id="next" class="ost-btns" onclick="next()"><img src="images/for-playlist/next-button.png"
+                alt=""></button>
     </div>
-  </nav>
 
-
-
-
-<script>
-let osts = [];       
-let currentIndex = 0; 
-document.addEventListener("DOMContentLoaded", () => {
-  playBtn = document.getElementById('play');
-  pauseBtn = document.getElementById('pause');
-
-
-});
-
-function add(id) {
-  var song = document.getElementById(id);
-  if (song) {
-    osts.push(song);
-    alert(`Added: ${id}`);
-  } else {
-    console.warn(`No element found with id: ${id}`);
-  }
-}
-
-function play() {
-  if (osts.length === 0) {
-    alert("No songs in playlist!");
-    return;
-  }
-
-  const audio = osts[currentIndex];
-  audio.currentTime = 0;
-  audio.play();
-
-  playBtn.style.display = "none";
-  pauseBtn.style.display = "inline-block"; 
-}
-
-function previous() {
-  if (currentIndex <= 0) {
-    alert("Cannot go back — this is the first song!");
-    return;
-  }
-
-  osts[currentIndex].pause();
-  currentIndex--;
-  play();
-}
-
-function next() {
-  if (currentIndex >= osts.length - 1) {
-    alert("Cannot go forward — this is the last song!");
-    return;
-  }
-
-  osts[currentIndex].pause();
-  currentIndex++;
-  play();
-}
-
-function stop() {
-  if (osts.length === 0) return;
-
-  const audio = osts[currentIndex];
-  audio.pause();
-
-  pauseBtn.style.display = "none";
-  playBtn.style.display = "inline-block";
-}
-
-</script>
-
-  <div class="main-image">
-    <img src="" alt="" id="ost-id">
-  </div>
-  <div class="ost-content">
-    <p class="ost-name" id="ost"></p>
-  </div>
-  <div class="playlist-btns">
-    <button id="previous" class="ost-btns" onclick="previous()"><img src="images/previous.png" alt=""></button>
-    <button id="play" class="ost-btns" onclick="play()"><img src="images/play-button-arrowhead.png" alt="" id="img-play"></button>
-    <button id="pause" class="ost-btns" onclick="stop()"><img src="images/pause.png" alt="" id="img-pause"></button>
-    <button id="next" class="ost-btns" onclick="next()"><img src="images/next-button.png" alt=""></button>
-  </div>
-  <div class="playlist">
-    <audio id="ASGORE" src="Audios/ASGORE.mp3" class="playlist_add"></audio>
-    <button onclick="add('ASGORE')">ASGORE - Toby Fox</button>
-
-    <audio id="queen" src="Audios/queen.mp3" class="playlist_add"></audio>
-    <button onclick="add('queen')">Attack of the killer queen - Toby Fox</button>
-  </div>
+    <div class="japa_wiktor">
+        <div class="container">
+            <div class="row">
+                <div class="playlist">
+                    <div class="col-md-4 col-sm-12 col-lg-3">
+                        <audio id="ASGORE" src="Audios/playlist/ASGORE.mp3"></audio>
+                        <button onclick="add('ASGORE')" class="playlist_add">1. ASGORE - Toby Fox</button>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-lg-3">
+                        <audio id="queen" src="Audios/playlist/queen.mp3"></audio>
+                        <button onclick="add('queen')" class="playlist_add">2. Attack of the killer queen - Toby
+                            Fox</button>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-lg-3">
+                        <audio id="BIGSHOT" src="Audios/playlist/BIGSHOT.ogg"></audio>
+                        <button onclick="add('BIGSHOT')" class="playlist_add">3. BIG SHOT - Toby Fox</button>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-lg-3">
+                        <audio id="finale" src="Audios/playlist/finale.ogg"></audio>
+                        <button onclick="add('finale')" class="playlist_add">4. Finale - Toby Fox</button>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-lg-3">
+                        <audio id="GUARDIAN" src="Audios/playlist/GUARDIAN.ogg"></audio>
+                        <button onclick="add('GUARDIAN')" class="playlist_add">5. GUARDIAN - Toby Fox</button>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-lg-3">
+                        <audio id="fohad" src="Audios/playlist/fohad.ogg"></audio>
+                        <button onclick="add('fohad')" class="playlist_add">6. Field Of Hopes And Dreams - Toby
+                            Fox</button>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-lg-3">
+                        <audio id="DBG" src="Audios/playlist/DBG.ogg"></audio>
+                        <button onclick="add('DBG')" class="playlist_add">7. Death By Glamour - Toby Fox</button>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-lg-3">
+                        <audio id="TVworld" src="Audios/playlist/TVworld.ogg"></audio>
+                        <button onclick="add('TVworld')" class="playlist_add">8. TV World - Toby Fox</button>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-lg-3">
+                        <audio id="TWR" src="Audios/playlist/TWR.ogg"></audio>
+                        <button onclick="add('TWR')" class="playlist_add">9. The World Revolving - Toby Fox</button>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-lg-3">
+                        <audio id="ruderbuster" src="Audios/playlist/ruderbuster.ogg"></audio>
+                        <button onclick="add('ruderbuster')" class="playlist_add">10. Ruder Buster - Toby Fox</button>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-lg-3">
+                        <audio id="HOJ" src="Audios/playlist/HOJ.ogg"></audio>
+                        <button onclick="add('HOJ')" class="playlist_add">11. Hammer Of Justice - Toby Fox</button>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-lg-3">
+                        <audio id="bonetrousle" src="Audios/playlist/bonetrousle.ogg"></audio>
+                        <button onclick="add('bonetrousle')" class="playlist_add">12. Bonetrousle - Toby Fox</button>
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-lg-3">
+                        <audio id="dummy" src="Audios/playlist/dummy.ogg"></audio>
+                        <button onclick="add('dummy')" class="playlist_add">13. Dummy! - Toby Fox</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

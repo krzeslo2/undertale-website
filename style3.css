@@ -31,7 +31,19 @@ body {
   background-attachment: fixed;
   scroll-behavior: smooth;
 }
-
+.japa_wiktor {
+  margin-top: 2%;
+  margin-bottom: 5%;
+  margin-left: 7%;
+  margin-right: 7%;
+  height: auto;
+  background-color: black;
+  border: solid white 6px;
+  font-family: '8bit';
+  font-size: larger;
+  padding: 10px;
+  color: white;
+}
 
 .navbar {
   background-color: rgba(255, 255, 255, 0.1);
@@ -85,4 +97,29 @@ body {
 
 #pause {
   display: none;
+}
+.playlist_add{
+    text-align: left;
+    border: none;
+    color: white;
+    background-color: none;
+    width: 300px;
+    margin: 15px;
+    background-color: black;
+}
+
+.tutorial{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Outfit';
+    margin: 5px;
+}
+.instruction>p{
+    font-family: 'Outfit';
+    font-size: 20px;
+    margin: 5px;
+}
+.instruction>h1{
+    font-weight: 700;
+    text-align: center;
 }

@@ -237,19 +237,19 @@ body {
 }
 
 .fight:hover {
-  content: url("images/fight_active.png");
+  content: url("images/for-buttons/fight_active.png");
 }
 
 .act:hover {
-  content: url("images/act_active.png");
+  content: url("images/for-buttons/act_active.png");
 }
 
 .item:hover {
-  content: url("images/item_active.png");
+  content: url("images/for-buttons/item_active.png");
 }
 
 .mercy:hover {
-  content: url("images/mercy_active.png");
+  content: url("images/for-buttons/mercy_active.png");
 }
 
 
