@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ost's - Undertale-ish thingy.com</title>
+  <link rel="stylesheet" href="style3.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+</head>
+<body style="background-image: none;">
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <a class="navbar-brand" href="index.html" style="color: black;">Japa Mateusz</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mb-2 mx-auto text-center">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="index.html" style="color: black;">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="About.html" style="color: black;">About Creator</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+<script>
+let osts = [];       
+let currentIndex = 0; 
+document.addEventListener("DOMContentLoaded", () => {
+  playBtn = document.getElementById('play');
+  pauseBtn = document.getElementById('pause');
+
+
+});
+
+function add(id) {
+  var song = document.getElementById(id);
+  if (song) {
+    osts.push(song);
+    alert(`Added: ${id}`);
+  } else {
+    console.warn(`No element found with id: ${id}`);
+  }
+}
+
+function play() {
+  if (osts.length === 0) {
+    alert("No songs in playlist!");
+    return;
+  }
+
+  const audio = osts[currentIndex];
+  audio.currentTime = 0;
+  audio.play();
+
+  playBtn.style.display = "none";
+  pauseBtn.style.display = "inline-block"; 
+}
+
+function previous() {
+  if (currentIndex <= 0) {
+    alert("Cannot go back — this is the first song!");
+    return;
+  }
+
+  osts[currentIndex].pause();
+  currentIndex--;
+  play();
+}
+
+function next() {
+  if (currentIndex >= osts.length - 1) {
+    alert("Cannot go forward — this is the last song!");
+    return;
+  }
+
+  osts[currentIndex].pause();
+  currentIndex++;
+  play();
+}
+
+function stop() {
+  if (osts.length === 0) return;
+
+  const audio = osts[currentIndex];
+  audio.pause();
+
+  pauseBtn.style.display = "none";
+  playBtn.style.display = "inline-block";
+}
+
+</script>
+
+  <div class="main-image">
+    <img src="" alt="" id="ost-id">
+  </div>
+  <div class="ost-content">
+    <p class="ost-name" id="ost"></p>
+  </div>
+  <div class="playlist-btns">
+    <button id="previous" class="ost-btns" onclick="previous()"><img src="images/previous.png" alt=""></button>
+    <button id="play" class="ost-btns" onclick="play()"><img src="images/play-button-arrowhead.png" alt="" id="img-play"></button>
+    <button id="pause" class="ost-btns" onclick="stop()"><img src="images/pause.png" alt="" id="img-pause"></button>
+    <button id="next" class="ost-btns" onclick="next()"><img src="images/next-button.png" alt=""></button>
+  </div>
+  <div class="playlist">
+    <audio id="ASGORE" src="Audios/ASGORE.mp3" class="playlist_add"></audio>
+    <button onclick="add('ASGORE')">ASGORE - Toby Fox</button>
+
+    <audio id="queen" src="Audios/queen.mp3" class="playlist_add"></audio>
+    <button onclick="add('queen')">Attack of the killer queen - Toby Fox</button>
+  </div>
+</body>
+
+</html>

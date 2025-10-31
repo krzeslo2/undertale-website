@@ -12,6 +12,31 @@
 </head>
 
 <body>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      var chapters = [
+        { imgId: 'chapter1-img', cardId: 'chapter1-card' },
+        { imgId: 'chapter2-img', cardId: 'chapter2-card' },
+        { imgId: 'chapter3-img', cardId: 'chapter3-card' },
+        { imgId: 'chapter4-img', cardId: 'chapter4-card' }
+      ];
+
+      chapters.forEach(({ imgId, cardId }) => {
+        var img = document.getElementById(imgId);
+        var card = document.getElementById(cardId);
+        var close = card.querySelector('.close-btn');
+
+        img.addEventListener('click', () => card.classList.add('active'));
+        close.addEventListener('click', () => card.classList.remove('active'));
+        card.addEventListener('click', (e) => {
+          if (e.target === card) card.classList.remove('active');
+        });
+      });
+    });
+  </script>
+
+  
   <nav class="navbar navbar-expand-lg sticky-top">
     <a class="navbar-brand" href="index.html" style="color: white;">Japa Mateusz</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -166,30 +191,6 @@
       </p>
     </div>
   </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      var chapters = [
-        { imgId: 'chapter1-img', cardId: 'chapter1-card' },
-        { imgId: 'chapter2-img', cardId: 'chapter2-card' },
-        { imgId: 'chapter3-img', cardId: 'chapter3-card' },
-        { imgId: 'chapter4-img', cardId: 'chapter4-card' }
-      ];
-
-      chapters.forEach(({ imgId, cardId }) => {
-        var img = document.getElementById(imgId);
-        var card = document.getElementById(cardId);
-        var close = card.querySelector('.close-btn');
-
-        img.addEventListener('click', () => card.classList.add('active'));
-        close.addEventListener('click', () => card.classList.remove('active'));
-        card.addEventListener('click', (e) => {
-          if (e.target === card) card.classList.remove('active');
-        });
-      });
-    });
-  </script>
-
 </body>
 
 </html>

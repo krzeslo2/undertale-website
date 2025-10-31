@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Tangerine:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
+@font-face {
+  font-family: 'DeterminationMono';
+  src: url('fonts/determination-mono-webfont.woff2') format('woff2'),
+    url('fonts/determination-mono-webfont.woff') format('woff'),
+    url('fonts/determination-mono-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: '8bit';
+  src: url('fonts/8bitOperatorPlus8-Regular.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+
+  background-color: rgba(0, 0, 0, 1);
+  background-image: url("images/Undertale Gifs.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  scroll-behavior: smooth;
+}
+
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  z-index: 10;
+}
+
+
+.navbar * {
+  position: relative;
+  z-index: 11;
+  color: black;
+  font-family: "Outfit", swap;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 30px;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+
+.navbar-nav .nav-item .nav-link.active {
+  color: white;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.315);
+  border-radius: 10px;
+}
+
+.playlist-btns {
+    display: grid;
+    grid-auto-flow: column;     
+    gap: 70px;                  
+    background-color: white;
+    width: fit-content;
+    margin: 0 auto;             
+    padding: 10px;
+}
+.ost-btns{
+    border: none;
+    background-color: white;
+}
+
+.ost-btns > img {
+    width: 80px;
+    height: 80px;
+}
+
+#pause {
+  display: none;
+}
